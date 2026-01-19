@@ -1,0 +1,15 @@
+class Revision 
+{
+	public static void main(String[] args) 
+	{
+		
+		 int num = -10	   ; 
+		 
+	  String ans= (num == 0) ? "zero" :  num>0 ? "postive" : "negative"	 ;
+	  
+	  System.out.println(ans);
+		 
+		 
+		
+	}
+}
