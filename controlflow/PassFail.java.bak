@@ -1,0 +1,18 @@
+class PassFail 
+{
+	public static void main(String[] args) 
+	{
+		
+		int english = 96 ; 
+		int evs = 100 ; 
+		
+		if(english >= 45  &&  evs >= 45)
+		{
+			System.out.println("yeea hoooooo,I get pass mark");
+		}
+		else
+		{
+			System.out.println("ooo my God!!!!!!, I got fail ");
+		}
+	}
+}
