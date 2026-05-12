@@ -1,0 +1,18 @@
+class MissingNumber 
+{
+	public static void main(String[] args) 
+	{
+		int n = 5 ;
+		int arr[] ={5,1,2,3};
+		int expectedSum = (n * (n+1) )/ 2;
+		int sum = 0 ; 	
+		for(int i=0 ; i<arr.length; i++)
+		{
+			sum = sum + arr[i];
+		}
+		int missing = expectedSum - sum ;
+		System.out.println("expected sum : "+expectedSum);
+		System.out.println("actual sum : "+sum);
+		System.out.println("missing number is : "+missing);
+	}
+}

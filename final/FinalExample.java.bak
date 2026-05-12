@@ -1,0 +1,13 @@
+class FinalExample 
+{
+	
+    final int  y =90 ;
+	
+	public static void main(String[] args) 
+	{
+		FinalExample ob = new FinalExample();
+		
+		System.out.println(ob.y);
+		
+	}
+}

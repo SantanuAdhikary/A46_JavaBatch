@@ -1,0 +1,35 @@
+class Student2
+{
+	String sname ; 
+	static String collegeName = "MGR";
+	int age ; 
+	
+	static void study()
+	{
+		System.out.println("we love to study");
+	}
+	
+	static
+	{
+		System.out.println("welcome to Student Application");
+	}
+	
+	void studentDetails()
+	{
+		System.out.println("student name is : "+sname);
+		System.out.println("college name is : "+collegeName);
+		
+	}
+	
+	public static void main(String[] args) 
+	{
+		Student2 s1 = new Student2();
+		s1.studentDetails();
+		study();
+		System.out.println("Bye Bye");
+	}
+	
+	{
+		age = 21;
+	}
+}

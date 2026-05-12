@@ -1,0 +1,26 @@
+class  Person
+{
+	String personName ;
+	int gfCount;
+	public static void main(String[] args) 
+	{
+		
+		Person p1 = new Person();
+		Person p2 = new Person();
+		
+		p1.personName = "tabbu";
+		p2.personName =  "gabbu";
+		
+		p1.gfCount = 10 ; 
+		p2.gfCount = 5 ; 
+		
+		System.out.println("person 1 name is : "+p1.personName);
+		System.out.println("good friend count of person1 is : "+p1.gfCount);
+	
+		System.out.println("person 2 name is : "+p2.personName);
+		System.out.println("good friend count of person2 is : "+p2.gfCount);
+	}
+}
+
+
+

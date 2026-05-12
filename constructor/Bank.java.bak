@@ -1,0 +1,110 @@
+import java.util.Scanner;
+class Accounts
+{
+	String bankName;
+	String accountHolder;
+	long acNo;
+	long phNo;
+    double balance = 1000;
+	int pin;
+	
+	Accounts(String bankName, String accountHolder,long acNo,long phNo,int pin)
+	{
+		this.bankName = bankName;
+		this.accountHolder = accountHolder;
+		this.acNo = acNo;
+		this.phNo = phNo;
+		this.pin = pin;
+	}
+	
+	void displayBalance()
+	{
+		System.out.println(this.accountHolder+" you have "+this.balance+" Rs. in your bank account");
+	}
+	
+	void deposit(int money)
+	{
+		this.balance += money;
+		System.out.println("deposit done successfully");
+	}
+	
+	void withdrawl(int money)
+	{
+		if(balance>= money)
+		{
+			balance -= money;
+			System.out.println("withdrawl done successfully");
+		}
+		else
+		{
+			System.out.println("insufficient balance");
+		}
+	}
+	
+	void userDetails()
+	{
+		System.out.println("user name is : "+this.accountHolder);
+		System.out.println("account number is : "+this.acNo);
+		System.out.println("bank name is : "+this.bankName);
+		
+	}
+	
+	void changePin()
+	{
+		
+	}
+}
+
+
+class Bank 
+{
+	static{
+		System.out.println("welcome to Bank Application");
+	}
+	
+	static Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) 
+	{
+		Accounts user1 = new Accounts("HDFC","Miller",90901234675L,9788123456L,4321);
+	    int amount ;
+		int option;
+	   do{
+	    System.out.println("1.Display Balance \n2.Display UserDetails \n3.Deposit \n4.Change Pin \n5.Withdrawl \n0.Exit");
+		System.out.print("enter any one option : ");
+		option = sc.nextInt();
+		
+		
+		switch(option)
+		{
+			case 1 : user1.displayBalance();
+			        break;
+			
+			case 2 : user1.userDetails();
+			        break;
+					
+			case 3 : System.out.print("enter Deposit amount : ");
+			         amount = sc.nextInt();
+					 user1.deposit(amount);
+					 break;
+					 
+			case 4 : user1.displayBalance();
+					 break;
+					 
+			case 5 : System.out.print("enter withdrawl amount : ");
+			         amount = sc.nextInt();
+					 user1.withdrawl(amount);
+					 break;
+			
+			case 0 : System.out.println("Thank you");
+			         break;
+					 
+			default : System.out.println("invalid option");
+			
+					 
+		}
+	   }while(option != 0);
+		
+		
+		
+	}
+}

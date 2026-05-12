@@ -1,0 +1,14 @@
+class B 
+{
+	public static void main(String[] args) 
+	{
+		A ob = new A(50);
+		//System.out.println(ob.x);
+		
+	     //ob.x = 200;
+		 
+		 ob.setX(200);
+		
+		System.out.println(ob.getX());
+	}
+}

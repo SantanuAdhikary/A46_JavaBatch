@@ -1,0 +1,62 @@
+
+class Rapido
+{
+	String pickup ; 
+	String destination;
+	int distance;
+	
+	Rapido(String pickup , String destination, int distance)
+	{
+		this.pickup = pickup;
+		this.destination = destination;
+		this.distance = distance;
+	}
+}
+
+class Bike extends Rapido
+{
+	int bikePrice = 10 ;
+	
+	Bike(String pickup, String destination, int distance)
+	{
+		super(pickup,destination,distance);
+	}
+	
+	void totalPrice()
+	{
+		System.out.println("total price is : "+ (bikePrice * distance));
+	}
+
+}
+
+class Auto extends Rapido
+{
+	
+	int autoPrice = 20 ;
+	
+	Auto(String pickup, String destination, int distance)
+	{
+		super(pickup,destination,distance);
+	}
+	
+	void totalAutoPrice()
+	{
+		System.out.println("total auto price is : "+ (autoPrice * distance));
+	}
+}
+
+class User 
+{
+	public static void main(String[] args) 
+	{
+		//Rapido r1 = new Rapido("Arumbakkam","vadapalani",2);
+		
+		Bike b1 = new Bike("Arumbakkam","vadapalani",2);
+		
+		b1.totalPrice();
+		
+		Auto a1 = new Auto("annanagar","vadapalani",5);
+		a1.totalAutoPrice();
+		
+	}
+}

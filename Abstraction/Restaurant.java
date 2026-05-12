@@ -1,0 +1,33 @@
+
+
+abstract class KFC
+{
+	 abstract void biriyani();
+	 
+
+	
+}
+
+ class SecondFloor extends KFC
+{
+	@Override
+	void biriyani()
+	{
+		System.out.println("our biriyani is very good , price is 350");
+	}
+}
+
+class Restaurant
+{
+	public static void main(String[] args)
+	{
+		
+		SecondFloor sf = new SecondFloor();
+		sf.biriyani();
+		
+		System.out.println("------------------------------------");
+		KFC k = new SecondFloor();
+		k.biriyani();
+		k.friedRice();
+	}
+}

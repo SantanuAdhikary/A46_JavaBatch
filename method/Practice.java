@@ -1,0 +1,20 @@
+class Practice 
+{
+	
+	public static void m1()
+	{
+		System.out.println("we love our java class");
+		return 87;
+	}
+	
+	public static void m2()
+	{
+		System.out.println("without java class we will die");
+		return 1;
+	}
+	public static void main(String[] args) 
+	{
+		m1();
+		m2();
+	}
+}

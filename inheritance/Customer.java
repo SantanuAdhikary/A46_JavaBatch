@@ -1,0 +1,51 @@
+class Payment
+{
+	double amount ;
+	String storeName;
+	
+	Payment(double amount , String storeName)
+	{
+		this.amount = amount;
+		this.storeName = storeName;
+	}
+	
+	void paymentDetails()
+	{
+		System.out.println("store name : "+storeName);
+		System.out.println("amount paid : "+amount);
+	}
+}
+
+class DebitCard extends Payment
+{
+	DebitCard(double amount , String storeName)
+	{
+		super(amount,storeName);
+		System.out.println("payment done by debitcard");
+	}
+}
+
+class Cash extends Payment
+{
+	Cash(double amount , String storeName)
+	{
+		super(amount,storeName);
+		System.out.println("payment done by cash");
+	}
+}
+
+
+class  Customer
+{
+	public static void main(String[] args) 
+	{
+		
+		Cash c1 = new Cash(4000,"EMA store");
+		c1.paymentDetails();
+		
+		System.out.println("----------------------------");
+		
+		DebitCard d  = new DebitCard(8000,"Nexus");
+		d.paymentDetails();
+	}
+}

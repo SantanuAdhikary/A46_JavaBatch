@@ -1,0 +1,19 @@
+class  MinDigit
+{
+	public static void main(String[] args) 
+	{
+		int num = 7265434;
+		
+		int min = Integer.MAX_VALUE;
+		while(num > 0)
+		{
+		   int lastdigit = num % 10 ;
+			 
+		    min = Math.min(lastdigit, min);
+			
+			num = num / 10 ; 
+		}
+		
+		System.out.println("minimum digit is : "+min);
+	}
+}

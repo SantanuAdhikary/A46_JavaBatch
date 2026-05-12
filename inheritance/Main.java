@@ -1,0 +1,43 @@
+class Parent
+{
+	int money ; 
+	String bike ; 
+	
+	Parent(int money, String bike)
+	{
+		this.money = money;
+		this.bike = bike;
+		System.out.println("i am parent");
+	}
+}
+
+class Child extends Parent
+{
+	String phone ; 
+	Child()
+	{
+		super(10000,"royal enfield");
+		System.out.println("i am child");
+	}
+}
+
+class  Main
+{
+	public static void main(String[] args) 
+	{
+		
+		//Parent p1 = new Parent();
+		//System.out.println(p1.bike);
+		//System.out.println(p1.phone);
+		
+		Child c1 = new Child();
+		System.out.println(c1.phone);
+		System.out.println(c1.bike);
+		
+		Child c2 = new Child();
+		System.out.println(c2.money);
+		System.out.println(c2.bike);
+		
+	
+	}
+}

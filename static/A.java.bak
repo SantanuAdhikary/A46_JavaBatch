@@ -1,0 +1,25 @@
+class A 
+{
+	int a  ; 
+	int b ;
+	
+	static
+	{
+		System.out.println("class A mlsi1");
+		a=10;
+		System.out.println(b);
+		
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("I am class A main method");
+	}
+	
+	static
+	{
+		System.out.println("class a mlsi2");
+		b=50;
+		System.out.println(a);
+		
+	}
+}

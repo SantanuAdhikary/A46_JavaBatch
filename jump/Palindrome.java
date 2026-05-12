@@ -1,0 +1,23 @@
+class  Palindrome
+{
+	public static void main(String[] args) 
+	{
+		int a[] = {10,20,30,40,50,40,30,25,10};
+		boolean flag = true;
+		int i=0 , j = a.length-1;	
+		while(i<j)
+		{
+			if(a[i] != a[j])
+			{
+				flag =false;
+				break;
+			}
+			i++;
+			j--;
+		}
+		if(flag)
+			System.out.println("it is palindrome");
+		else
+			System.out.println("it is not palindrome");	
+	}
+}

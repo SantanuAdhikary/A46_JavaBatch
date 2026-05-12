@@ -1,0 +1,23 @@
+class Parent
+{
+	void sleep()
+	{
+		System.out.println("parent is sleeping");
+	}
+}
+
+class Child extends Parent
+{
+	void play()
+	{
+		System.out.println("child is playing");
+	}
+}
+
+class FinalClass 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+	}
+}

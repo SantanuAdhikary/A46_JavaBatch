@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class Lifecycle 
+{
+	static Scanner sc = new Scanner(System.in); 
+	public static void main(String[] args) 
+	{
+		System.out.print("enter your age : ");
+		int age = sc.nextInt();
+		
+		if(age >=55)
+			System.out.println("senior citizen");
+		    System.out.prinlnt("hi");
+		else if(age >=20)
+			System.out.println("Adult");
+		else if(age>=13)
+			System.out.println("teenager");
+		else
+			System.out.println("child");
+		
+	}
+}

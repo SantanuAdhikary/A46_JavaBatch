@@ -1,0 +1,34 @@
+abstract class Vehicle
+{
+	abstract void stop();
+	
+	void start()
+	{
+		System.out.println("vehicle starts");
+	}	
+}
+
+class Car extends Vehicle
+{
+	@Override
+		void stop()
+	    {
+		      System.out.println("car has stopped");
+	    }
+}
+
+
+class  Main
+{
+	public static void main(String[] args) 
+	{
+	  Car c1 =	new Car();
+	  c1.stop();
+	  c1.start();
+	  
+	  Vehicle v1 = new Car();  // upcasting 
+	  v1.stop();
+	  v1.start();
+	  
+	}
+}

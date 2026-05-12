@@ -1,0 +1,56 @@
+import java.util.Scanner;
+class Instagram 
+{
+	static String userName = "spiderman";
+	static String userEmail = "peter_parker@gmail.com";
+	static long userPhNo = 1234567890L;
+	static String userPassword = "My@mj4";
+	
+	public static void login(String email , String pass)
+	{
+		if(userPassword.equals(pass) &&  userEmail.equals(email))
+			System.out.println("login done successfully");
+		else
+		     System.out.println("Wrong Credentials");
+	}
+	
+	public static void login(long phNo , String pass)
+	{
+		if(userPhNo == phNo &&  userPassword.equals(pass))
+			System.out.println("login done successfully");
+		else
+		     System.out.println("Wrong Credentials");
+	}
+	
+	public static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) 
+	{
+		
+		System.out.println("1.Login by Email \n2.Login by Phone Number");
+		System.out.print("enter any one option : ");
+		int option = sc.nextInt();
+		String email ; 
+		String pass;
+		long phNo;
+		
+		switch(option)
+		{
+			case 1 : System.out.print("enter your email id : ");
+			         email = sc.next();
+					 System.out.print("enter your password : ");
+					 pass = sc.next();
+					 login(email, pass);
+					 break;
+					 
+			case 2 : System.out.print("enter your phone number : ");
+			         phNo = sc.nextLong();
+					 System.out.print("enter your password : ");
+					 pass = sc.next();
+					 login(phNo, pass);
+					 break;
+					 
+			default : System.out.println("invalid option");
+		}
+	}
+}

@@ -1,0 +1,19 @@
+class A 
+{
+	private int x ;
+	
+	A(int x)
+	{
+		this.x = x ;
+	}
+	
+	public void setX(int x)
+	{
+		this.x = x;
+	}
+	
+	public int getX()
+	{
+		return x;
+	}
+}

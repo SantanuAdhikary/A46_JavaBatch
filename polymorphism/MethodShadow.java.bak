@@ -1,0 +1,36 @@
+
+class Parent
+{
+	
+	int x = 30 ;
+	static void dance()
+	{
+		System.out.println("parent is dancing");
+	}
+}
+class Child extends Parent
+{
+	int x = 10 ;
+	static void dance()
+	{
+		System.out.println("Child is dancing");
+	}
+}
+
+class MethodShadow 
+{
+	public static void main(String[] args) 
+	{
+		Child c = new Child();
+		c.dance();
+		System.out.println(c.x);
+		
+		Parent p = new Parent();
+		p.dance();
+		System.out.println(p.x);
+		
+		Parent p1 = new Child();  // upcasting
+		p1.dance();
+		System.out.println(p1.x);
+	}
+}

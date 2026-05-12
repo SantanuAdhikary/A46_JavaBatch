@@ -1,0 +1,31 @@
+class Person
+{
+	void eat()
+	{
+		System.out.println("can eat");
+	}
+}
+
+class Student extends Person
+{
+	void study()
+	{
+		System.out.println("can study");
+	}
+}
+
+class DownCasting 
+{
+	public static void main(String[] args) 
+	{
+			    
+		Person p2	= new Student();  // upcasting
+
+	    Student s2 = (Student) p2;   // downcasting
+		s2.eat();
+		s2.study();
+		
+		
+		Student s3 = (Student) new Person();
+	}
+}

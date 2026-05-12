@@ -1,0 +1,31 @@
+class Method2 
+{
+	public static String m1()
+	{
+		System.out.println("i am method1");
+		
+		return "santanu";
+	}
+	
+	public static float m2(float a , char b)
+	{
+		System.out.println("m2");
+		
+		return 3.4f;
+	}
+	
+	public static int add(int a , int b)
+	{
+		int sum = a + b ; 
+		
+		return sum ;
+	}
+	
+	public static void main(String[] args) 
+	{
+		
+	 int sum =	add(100,200);
+	 
+	 System.out.println(sum);
+	}
+}

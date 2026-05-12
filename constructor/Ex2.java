@@ -1,0 +1,26 @@
+class Ex2 
+{
+	int a ; 
+	Ex2(int a)
+	{
+		this.a = a ; 
+	}	
+	void display()
+	{
+		System.out.println("the value of a is : "+this.a); 
+	}	
+	static void m1()
+	{
+		System.out.println("i am m1");
+		System.out.println("the value of a is : "+this.a);// not possible
+	}
+	public static void main(String[] args) 
+	{
+		Ex2 ob = new Ex2(50);
+		ob.display();
+		Ex2 ob2 = new Ex2(35);
+		ob2.display();
+		m1();
+		
+	}
+}

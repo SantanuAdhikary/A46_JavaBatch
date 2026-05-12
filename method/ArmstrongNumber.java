@@ -1,0 +1,58 @@
+class ArmstrongNumber 
+{
+	public static int power(int b , int p)
+	{
+		int mul = 1 ; 
+		
+		for(int i=1 ;i<=p ; i++)
+		{
+			mul = mul * b ;
+		}
+		
+		return mul;
+	}
+	
+	public static int count(int n )
+	{
+		
+		 int c = 0 ;
+		 
+		 while(n > 0)
+		{
+			n = n / 10 ; 
+			c++;
+		}
+		
+		return c;
+	}
+	
+	
+	public static void main(String[] args) 
+	{
+		int n = 153;
+		
+		int temp = n ;
+		
+		int c = count(n);
+		
+		int sum = 0 ;
+		
+		while( n >0)
+		{
+			int ld = n % 10 ; 
+			
+			sum = sum + power(ld,c);
+			
+			n = n / 10;
+		}
+		
+		System.out.println("count is : "+c);
+		System.out.println("sum is : "+sum);
+		
+		
+		if(sum == temp)
+			System.out.println("it is armstrong nubmer");
+		else
+			System.out.println("it is not");
+	}
+}

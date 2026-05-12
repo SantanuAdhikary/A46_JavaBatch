@@ -1,0 +1,45 @@
+interface Father
+{
+	void responsibility();
+}
+
+interface GrandFather
+{
+	void storyTelling();
+}
+
+class Mother
+{
+	void care()
+	{
+		System.out.println("taking care of family");
+	}
+}
+
+
+interface Child2 extends Father,GrandFather
+{
+}
+
+class Child  extends Mother implements Father,GrandFather
+{
+	@Override 
+	 public void responsibility()
+		{
+			System.out.println("eat sleep repeat");
+		}
+		
+	@Override
+		public void storyTelling()
+		{
+			System.out.println("knows marvel story");
+		}
+}
+
+class MultipleInheritance 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("welcome to Family");
+	}
+}

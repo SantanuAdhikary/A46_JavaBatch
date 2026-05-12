@@ -1,0 +1,19 @@
+class Method3 
+{
+		
+    public static int m3()
+	{
+		int c = 20 + 30 ;
+		
+		
+		System.out.println("how are you");
+		return c ;
+		
+		
+	}
+	
+	public static void main(String[] args) 
+	{
+	  System.out.println(	m3() );
+	}
+}

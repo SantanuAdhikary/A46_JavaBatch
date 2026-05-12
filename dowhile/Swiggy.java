@@ -1,0 +1,92 @@
+import java.util.Scanner;
+class Swiggy 
+{
+	static Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) 
+	{
+		System.out.println("welcome to my FoodApp");
+		System.out.println("Restaurant Names");
+		System.out.println("1. A2B  \n2. Amma Canteen \n3.Zaitoon");
+		System.out.print("select any one restaurant : ");
+		int option = sc.nextInt();
+		
+		//System.out.println(option);
+		int price =0;
+		
+		int bill =0;
+		
+		switch(option)
+		{
+			case 1 : System.out.println("welcome to A2B");
+			         System.out.println("1.Mutton Biriyani 300rs \n2.Chicken Biriyani 200rs \n3.Fried Rice 100rs");
+					 System.out.print("select any food : ");
+					 int food = sc.nextInt();
+					 
+					 if(food == 1)
+						 price = 300;
+					 else if(food == 2)
+						 price = 200;
+					 else if(food == 3)
+						 price = 100;
+					 else
+						 System.out.println("wrong food");
+					 
+					 System.out.print("enter the quantity ");
+					 int quantity = sc.nextInt();
+					 
+					 bill = quantity * price ; 
+					 
+					 System.out.println("your bill is : "+bill);
+					 
+					 System.out.print("do you want to pay y/n : ");
+					 char ch = sc.next().charAt(0);
+					 
+					 if(ch == 'y' || ch== 'Y')
+			          {
+				
+				           System.out.print("enter the amount : ");
+						   int amount = sc.nextInt();
+						   
+						   if(bill == amount)
+						  {
+							 
+							 int otp = (int)(Math.random() * 9000)+1000;
+							 System.out.println("your otp is : "+otp);
+							 
+							 System.out.print("enter the otp : ");
+							 int userOtp = sc.nextInt();
+							 
+							 
+							 if(otp == userOtp)
+							  {
+								System.out.println("order is placed");
+								
+							  }
+							  else
+							  {
+								System.out.println("you blind person, enter the correct otp");
+							  }
+						  }
+						  else{
+							System.out.println("you idiot ! , enter correct amount");
+						  }
+						   
+		           	} else{
+						System.out.println("poor guy don't have money go.. ");
+					}
+					 
+			         break;
+					 
+					 
+					 
+			case 2 : System.out.println("welcome to Amma Canteen");
+			         break;
+					 
+			case 3 : System.out.println("welcome to Zaiton");
+			         break;
+					 
+			default : System.out.println("invalid option");
+			         
+		}
+	}
+}

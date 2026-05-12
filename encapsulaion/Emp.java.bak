@@ -1,0 +1,55 @@
+class Emp 
+{
+	private String ename;
+	private int eid;
+	private double sal;
+	
+	Emp(String ename , int eid)
+	{
+		this.ename = ename;
+		this.eid = eid;
+	}
+	
+	// getter method for ename
+	
+	public String getEname()
+	{
+		return ename;
+	}
+	
+	// setter method for ename
+	
+	public void setEname(String ename)
+	{
+		this.ename = ename;
+	}
+	
+	
+	// getter method for eid
+	
+	public int getEid()
+	{
+		return eid;
+	}
+	
+	// setter method for eid 
+	
+	public void setEid(int eid)
+	{
+		this.eid = eid;
+	}
+	
+	// getter for sal
+	
+	public double getSal()
+	{
+		return sal;
+	}
+	
+	// setter for sal
+	
+	public void setSal(double sal)
+	{
+		this.sal = sal;
+	}
+}

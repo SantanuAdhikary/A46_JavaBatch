@@ -1,0 +1,27 @@
+class Prime 
+{
+	public static boolean isPrime(int n)
+	{
+		int loopcount = 1 ; 
+		
+		for(int i =2 ; i<=n/2 ;i++)
+		{
+			System.out.println("loop count is : "+loopcount++);
+			if(n % i ==0)
+				return false;
+		}
+		return true;
+	}
+	
+	public static void main(String[] args) 
+	{
+		int n = 97 ; 
+		
+		boolean ans = isPrime(n);
+		
+		if(ans)
+			System.out.println("it is prime");
+		else
+			System.out.println("it is not prime");
+	}
+}

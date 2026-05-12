@@ -1,0 +1,61 @@
+class Student
+{
+	String sname ;
+	int sid;
+	
+	Student()
+	{
+		System.out.println("non parameterized constructor");
+	}
+	
+	
+	Student(String sname)
+	{
+		this.sname = sname;
+	}
+	
+	Student(String sname , int sid)
+	{
+		this.sname = sname;
+		this.sid =sid;
+	}
+	
+	Student(int sid , String sname)
+	{
+		this.sname = sname;
+		this.sid = sid;
+	}
+	
+	void studentDetails()
+	{
+		System.out.println(sname );
+		System.out.println(sid );
+	}
+}
+
+class  College
+{
+	public static void main(String[] args) 
+	{
+		
+		Student s1 = new Student();
+		s1.studentDetails();
+		System.out.println("------------------------");
+		
+		Student s2 = new Student("vignesh");
+		s2.studentDetails();
+		
+		System.out.println("------------------------");
+		
+		Student s3 = new Student("rohit",12);
+		s3.studentDetails();
+		
+		System.out.println("------------------------");
+		
+		Student s4 = new Student(18,"virat");
+		s4.studentDetails();
+	}
+}
+
+
+

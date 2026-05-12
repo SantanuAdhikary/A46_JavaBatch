@@ -1,0 +1,22 @@
+import java.util.Scanner;
+class Login 
+{
+	static Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) 
+	{
+		
+		long regNo = 1234567890L;
+		
+		System.out.print("enter your registered mobile number : ");
+		long phNo = sc.nextLong();
+		
+		if(regNo == phNo)
+		{
+			System.out.println("login done");
+		}
+		else
+		{
+			System.out.println("wrong credentials");
+		}
+	}
+}

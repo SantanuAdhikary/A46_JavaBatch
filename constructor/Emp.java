@@ -1,0 +1,34 @@
+class Emp
+{
+	String ename ; 
+	int eid;
+	int deptNo;
+	String loc;
+	
+	Emp(String ename, int eid , int deptNo, String loc)
+	{
+		this.ename = ename;
+		this.eid = eid ; 
+		this.deptNo = deptNo;
+		this.loc = loc;
+	}
+	
+	void empDetails()
+	{
+		System.out.println("emp name is : "+ename);
+		System.out.println("emp id is : "+eid);
+		System.out.println("emp dept no is : "+deptNo);
+		System.out.println("emp location is : "+loc);
+	}
+	
+	public static void main(String[] args) 
+	{
+		Emp e1 = new Emp("miller",1200,20,"chennai");
+	
+		e1.empDetails();
+		System.out.println("-----------------------------");
+		
+		Emp e2 = new Emp("scott",1800,10,"bangalore");
+		e2.empDetails();
+	}
+}

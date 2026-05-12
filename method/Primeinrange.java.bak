@@ -1,0 +1,35 @@
+class Primeinrange
+{
+	public static boolean isEven(int n)
+	{
+		if(n % 2 == 0)
+			return true;
+		
+		return false;
+	}
+	
+	public static boolean isPrime(int n)
+	{
+		int c = 0 ;
+		
+		for(int i=1 ; i<=n ;i++)
+		{
+			if(n % i==0)
+				c++;
+		}
+		
+		if(c == 2)
+			return true;
+		
+	  return false;
+	}
+	
+	public static void main(String[] args) 
+	{
+		for(int i= 10 ; i<=100 ; i++)
+		{
+			if( isPrime(i) )	
+		    	System.out.println(i);
+		}
+	}
+}

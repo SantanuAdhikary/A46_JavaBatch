@@ -1,0 +1,41 @@
+
+class Mother
+{
+	public void dance()
+	{
+		System.out.println("mother can do Bharatanatyam");
+	}
+	
+	void sing()
+	{
+		System.out.println("mother can do classical singing");
+	}
+}
+
+
+class Daughter extends Mother
+{
+	
+	protected void dance()
+	{
+		System.out.println("daughter can do HipHop");
+	}
+}
+
+
+class MethodOverride 
+{
+	public static void main(String[] args) 
+	{
+		
+		Daughter d = new Daughter();
+		d.dance();
+		
+		Mother m = new Mother();
+		m.dance();
+		
+		
+		Mother m1 = new Daughter();
+		m1.dance();
+	}
+}

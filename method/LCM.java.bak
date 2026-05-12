@@ -1,0 +1,25 @@
+class LCM 
+{
+	public static int findGcd(int a ,int b)
+	{
+		int gcd = 1 ; 
+		int n = Math.min(a,b);
+		for(int i= 1 ; i<=n ;i++)
+		{
+			if(a % i==0 && b % i ==0)
+				gcd = i ;
+		}
+		
+		return gcd;
+	}
+	
+	public static void main(String[] args) 
+	{
+		int a = 25;
+		int b = 30 ;
+		
+		int lcm = (a * b ) / findGcd(a,b) ;
+		
+		System.out.println("LCM is : "+lcm);
+	}
+}

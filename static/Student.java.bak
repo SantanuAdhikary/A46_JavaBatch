@@ -1,0 +1,19 @@
+class Student 
+{
+	public static void timewaste()
+	{
+		System.out.println("we are very happy by doing time waste");
+	}
+	
+	
+	public static void main(String[] args) 
+	{
+		timewaste();
+		Student.timewaste();
+		
+		Student s1 = new Student();
+		s1.timewaste();
+		
+		
+	}
+}
