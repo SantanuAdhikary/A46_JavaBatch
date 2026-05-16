@@ -3946,3 +3946,110 @@ abstract inteface C
      }
 ```
 
+
+### finalize()
+
+* this method is present in Object class , it is called by Garbage Collector **System.gc()** before the destroy of any object.
+
+
+```java
+
+        class School
+        {
+            String sub1 ;
+            String sub2 ;
+
+            School(String sub1 , String sub2)
+            {
+                this.sub1 = sub1;
+                this.sub2 = sub2;
+            }
+
+            @Override
+            public String toString()
+            {
+                return "subject1 : "+sub1 + " subject2 : "+sub2;
+            }
+
+            @Override
+            protected void finalize()  {
+
+                System.out.println("object deleted");
+            }
+
+            public static void main(String args[])
+            {
+                    School s = new School("mathematics","chemistry");
+                    s = null;
+                    System.gc();
+            }
+        }
+
+```
+
+
+
+### clone() 
+
+* The `clone()` method in Java is used to create an exact copy (a duplicate) of an existing object.
+
+**steps to make clone of any object**
+
+*step 1:*  `implement Clonable interface`
+
+```java
+         class School implements Clonable
+         {
+
+         }
+```
+
+*step2:*  `override the clone() method`
+
+```java
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+          return super.clone();
+    }
+```
+
+*step 3:* `use the clone() method and handle the exception`
+
+```java
+
+          School s1 = new School("java","python");
+           System.out.println(s1);
+         try{
+
+             School s2 = (School) s1.clone(); // downcasting
+             System.out.println(s2)
+         }
+         catch(Exception e)
+         {
+            System.out.println(e);
+         }
+
+```
+
+
+### Package in Java
+
+
+**built-in package in java**
+
+
+
+
+### access modifier
+
+  * it is used for visibility and accessibility  of identifiers in java.
+
+  * in java we have 4 access modifiers. 
+
+  * public , protected , default , private 
+
+
+
+
+
