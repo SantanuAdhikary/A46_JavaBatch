@@ -4053,3 +4053,496 @@ abstract inteface C
 
 
 
+### method chaining 
+
+* it is the process of calling more than one method in single statement. 
+
+* for performing this all the methods return type should be class type and it will return the current object by using `this` keyword.
+
+eg:
+
+```java
+
+
+
+class Practice
+{
+
+    Practice reading()
+    {
+        System.out.println("I am reading");
+        return this;
+    }
+    Practice writing()
+    {
+        System.out.println("I am writing");
+        return this;
+    }
+    Practice mock()
+    {
+        System.out.println("I will give mock");
+        return this;
+    }
+    public static void main(String[] args) {
+        
+        Practice p = new Practice();
+
+        // p.reading();
+        // p.writing();
+        // p.mock();
+
+        p.reading().writing().mock();
+
+    }
+}
+```
+
+
+
+
+
+
+
+### method local inner class 
+
+   * any class we are declaring inside method is called method local inner class.
+
+   * the accessibility of this class will be inside this method only.
+
+
+```java
+   
+    class Outer
+      {
+         public static void m1()
+          {
+                class Inner
+                {
+                     void m2()
+                     {
+                        System.out.println("this is inner class method");
+                     }
+                }
+
+                Inner ob = new Inner();
+                ob.m2();
+          }
+      }
+```
+
+
+### Anonymous class
+
+* any class that does not have any name,is called Anonymous class.
+
+*syntax*
+
+    interfacename ref_var = new interfacename{
+
+           @Override
+    };
+
+
+eg:
+
+```java
+
+interface Caluculate
+{
+    void add();
+}
+
+class Calulator 
+{
+    public static void main(String args[])
+    {
+        Calculate c = new Calculate(){
+            @Override
+              public void add()
+              {
+                System.out.println("this is add method");
+              }
+        } 
+    }
+}
+
+```
+
+
+### lamda expression
+
+* anonymous block of code that is used to manage functional interface.
+
+* it has introduced in java 8 features.
+
+*syntax :*
+
+```java
+         
+     interfaceName refVariable = (parameters)->{ }
+```
+
+
+eg: 
+
+```java
+  @FunctionalInterface
+interface Operation
+{
+    void multiply();
+}
+
+interface Operation2
+{
+    void division(int a , int b);
+}
+
+interface Operation3 {
+
+    int addition(int a , int b);
+}
+
+public class Lamda {
+    public static void main(String[] args) {
+        
+        // ! lamda expression without parameter
+
+        Operation op = ()->{
+
+            System.out.println("muliply is "+(2*4));
+        };
+        op.multiply();
+
+
+        // ! lamda expression with parameter
+
+        Operation2 op2 = ( a ,  b)->{
+
+             System.out.println("division is : "+(a/b));
+        };
+        op2.division(20, 5);
+
+        // ! lamda expression with return type
+
+        Operation3 op3 = (a,b)-> a + b ;
+
+      System.out.println("addition is : "+op3.addition(30,60))  ;
+    }
+}
+
+```
+
+
+
+### Exception 
+
+ * Exception is an unwanted event that occurs during the execution of program.
+
+ * it happens becuase of some abnormal statement.
+
+ * for this the normal flow of a program execution will be errupted.
+
+ * exception happens suddenly.
+
+ eg: 
+     going to attend world class best **santanu sir** batch, suddenly rain came.
+
+     santanu sir is teaching suddenly power cut happen.
+
+
+*diagram of Exception class hierarchy*
+
+
+**types of Exception**
+
+* 1. Unchecked Exception 
+* 2. Checked Exception 
+
+
+**Unchecked Exception**
+
+  * the exception, compiler is not aware of or compiler does not know about the exception is called as Unchecked Exception. 
+
+  * Unchecked Exception is compile time success but run time error.
+
+
+*example 1*
+
+```java
+ 
+ class A
+ {
+     public static void main(String args[])
+     {
+             int a = 20 , b = 0 ; 
+             System.out.println("start");
+             System.out.println(a+b);
+             System.out.println(a-b);
+             System.out.println(a/b);  
+             System.out.println(a*b);
+             System.out.println("end");
+     }
+ }
+```
+
+*note:* for the abnormal statement  `sop(a/b)`, it occurs Exception and it will stop the normal execution flow.
+
+
+*example 2:*
+
+```java
+       class Ex2
+       {
+           public static void main(String args[])
+           {
+                int arr[] = {10,20,30,40,50};
+
+                System.out.println(arr[0]);
+                System.out.println(arr[3]);
+                System.out.println(arr[5]);
+                System.out.println(arr[1]);
+                System.out.println(arr[2]);
+           }
+       }
+```
+
+*note* this is `java.lang.ArrayIndexOutOfBoundsException` 
+
+
+*example 3:*
+
+```java
+
+        class Example3
+        {
+                public static void main(String args[])
+                {
+                    String s1 = null;
+                    System.out.println(s1.toUpperCase());
+                }
+        }
+```
+
+*note:* this is ` java.lang.NullPointerException`
+
+
+*example 4:*
+
+```java
+      class A
+      {}
+      class B extends A
+      {}
+      class Example4
+      {
+        public static void main(String args[])
+        {
+              B ob =(B) new A();
+        }
+      }
+```
+*note* this is `java.lang.ClassCastException`
+
+
+**Checked Exception**
+
+   * Exception that is known by compiler is called as Checked Exception.
+
+*example*
+
+```java
+        class Example1
+        {
+                public static void main(String args[])
+                {
+                        for(int i=1;i<=10 ; i++)
+                        {
+                            System.out.println(i);
+                            Thread.sleep(200);
+                        }
+                }
+        }
+```
+
+
+
+### Exception Handling
+
+ * when we are writing any abnormal statement in our prgoram, it will generate one **Throwable type object**.
+
+ * after that immediately it won't stop the execution, it will search for any referece variable who can store the object.
+
+ * now programmer task is to handle the Exception by storing the Throwable type of object.
+
+ * for that we need **try and catch block** 
+
+ *example*
+
+ ```java
+        
+  class Handle
+    {
+     public static void main(String[] args) {  
+        int a = 30 , b = 0 ;
+        System.out.println("start");    ✅
+        try{
+            System.out.println(a+b);  ✅
+            System.out.println(a/b);
+            System.out.println(a-b); ❌
+            System.out.println(a*b); ❌
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.println("your problem I have handled"); ✅
+        }
+        System.out.println("end");
+
+  }   
+}
+ ```
+
+
+ **we can write multiple try block and multiple catch block**
+
+ *example*
+
+ ```java
+     public class Handle2 {
+    
+    public static void main(String[] args) {
+        
+        System.out.println("start");
+
+        int arr[]={2,3,4,5,6};
+        String s = null ;
+
+        // ! first try and catch block
+    
+        try
+        {
+            System.out.println(30/0);
+
+        }
+        catch(ArithmeticException e)
+        {
+              System.out.println("arithmetic exception is handled");
+        }
+    
+        // ! 2nd try and catch block
+
+        try{
+            System.out.println(s.toUpperCase());
+        }
+        catch(NullPointerException e)
+        {
+           System.out.println("nullpointer exception is handled");
+        }
+       
+
+        // ! 3rd try and catch 
+
+        try{
+
+            System.out.println(arr[10]);
+        }
+        catch(ArrayIndexOutOfBoundsException e)
+        {
+           System.out.println("ArrayIndexOutOfBoundsException is handled");
+        }
+        System.out.println("end");
+
+    }
+}
+
+ ```
+
+
+ **try block with multiple catch block**
+
+ *syntax*
+
+ ```java
+
+       try{
+       }
+       catch()
+       {}
+       catch()
+       {}
+       .
+       .
+       .
+       catch()
+       {}
+ ```
+
+ ```java
+
+
+     public class handle3 {
+    
+    public static void main(String[] args) {
+        
+        System.out.println("start");
+        int a[] ={1,2,3,4};
+        String s = null;
+        try{
+            System.out.println(10+5);
+            System.out.println(10-5);
+            System.out.println(a[2]);
+            System.out.println(a[10]);
+            System.out.println(s.toUpperCase());
+            System.out.println(30/0);
+        }
+        catch(ArithmeticException e)
+        {
+          System.out.println("ArithmeticException handled");
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println("NullPointerException is handled");
+        }
+        catch(ArrayIndexOutOfBoundsException e)
+        {
+            System.out.println("ArrayIndexOutOfBoundsException is handled");
+        }
+        System.out.println("end");
+    }
+}
+ ```
+
+
+ * instead of writing multiple catch block we can use only one catch block.
+
+ * when we are using multiple catch block, we have to handle all types of possible exception that might occur in my program.
+
+ * to overcome this if we take only one catch block, this catch block should have capability to handle any kind of exception.
+
+ * for that in the catch block we will take **Exception class** reference variable because it can store any kind of exception (checked and unchecked) by providing `Generalization`.
+
+ *example*
+
+ ```java
+    public class handle4 {
+    
+    public static void main(String[] args) {    
+        System.out.println("start");
+        int a[] ={1,2,3,4};
+        String s = null;
+        try{
+            System.out.println(10+5);
+            System.out.println(10-5);
+            System.out.println(a[2]);
+            // System.out.println(a[10]);
+            // System.out.println(s.toUpperCase());
+            System.out.println(30/0);
+        }
+        catch(Exception e)
+        {
+               System.out.println("exception is handled");
+        }
+        System.out.println("end");
+    }
+}
+
+ ```
