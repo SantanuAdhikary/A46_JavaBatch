@@ -4546,3 +4546,357 @@ public class Lamda {
 }
 
  ```
+
+
+ **try block**
+
+ * A try block in Java is a container used to enclose code that might throw an exception.
+
+ * we can't write try block alone, there should be atleast one catch or finally block with try.
+
+ * we can write one try block and multiple catch block.
+
+
+ **catch block**
+
+ * catch block is used to handle the exception by storing the Throwable type object, that is created in try block.
+
+ * we can't write only catch block without try block.
+
+ *syntax*
+
+ ```java
+     
+     try{
+
+     }
+     catch( Exceptionhandlingclass ref )
+     {
+
+     }
+
+ ```
+
+ * in catch block order maintaining is very much important.
+
+ *example*
+
+ ```java
+    
+      public static void main(String args[])
+      {
+           
+        try{
+            System.out.println(10/0);
+        }
+        catch(ArithmeticException e)
+        {
+             System.out.println("arithmetic exception is handled");
+        }
+        catch(RuntimeException e)
+        {
+            System.out.println("RuntimeException is handled");
+        }
+        catch(Exception e)
+        {
+            System.out.println("exception is handled");
+        }
+
+        catch(Throwable e)
+        {
+            System.out.println("Throwable exception is handled");
+        }
+       
+      }
+ ```
+
+ *note :*  the above example is possible but if we do opposite that is not possible.
+
+                        Throwable 
+                            |
+                        Exception
+                            |
+                    RuntimeException
+                            |
+                     ArithmeticException
+
+
+**finally block**
+
+  * finally block is used in Exception handling with try block or with try and catch block.
+
+  * this block will execute everytime regardless of exception is there or not.
+
+
+**what is throws keyword**
+
+* In Java, the `throws` keyword is used in a method declaration to indicate that the method might throw one or more specific exceptions during its execution. 
+
+* It  informing the compiler and the caller that this method won't handle the exception itself and that the caller is responsible for dealing with it.
+
+
+**Exception Propagation**
+
+* transfering the Exception Handling from one method to the caller method is called as `Exception Propagation.`
+
+* for checked Exception, propagation can be done explicitely by using `throws` keyword.
+
+* if it is unchecked Exception, propagation will happen implicitely. we need not to use `throws` keyword.
+
+*example: Exception Propagation for Checked Exception*
+
+```java
+
+
+public class PropagationEx {
+
+    public static void m3() throws Exception
+    {
+          for(int i=1 ; i<=10;i++)
+          {
+            System.out.println(i);
+            Thread.sleep(1000);
+          }
+    }
+    public static void m2() throws Exception
+    {
+       m3();
+    }
+    public static void m1() throws Exception
+    {
+        m2();
+    }
+    public static void main(String[] args) {
+        
+       try{
+           m1();
+       } 
+       catch(Exception e)
+       {
+         System.out.println("thread exception is handled");
+       }
+
+    }
+}
+
+
+```
+
+
+**what is Throwable class**
+
+* The java.lang.Throwable class is the root superclass of all errors and exceptions in the Java language.
+
+*methods* => `toString(),getMessage(),printStackTrace()`
+
+*example*
+
+```java
+
+      class Example
+      {
+        public static void main(String[] args) {
+        
+        int a[]={10,3};
+        try{
+            // System.out.println(10/0);
+            System.out.println(a[6]);
+        }
+        catch(Throwable t)
+        {
+            System.out.println(t.toString());
+            System.out.println(t.getMessage());
+            t.printStackTrace();
+        }
+    }
+}
+```
+
+
+**throw keyword**
+
+* The `throw` keyword in Java is used to explicitly throw an exception from a method or any block of code.
+
+* mainly it is used for throwing *custom exception*
+
+* it can only throw one exception object at a time.
+
+*syntax*
+    
+    throw object Of Exception type("message")
+
+*example*
+
+```java
+
+public class Learningthrow {
+    public static void main(String[] args)  {
+        
+          System.out.println("start");
+          int age = 9;
+
+            if(age>21)
+                System.out.println("you can ride bike");
+            else
+             throw new ArithmeticException("you can't ride");    
+        
+        System.out.println("end");
+    }
+}
+
+```
+
+
+**differnce between throw and throws**
+
+
+
+
+### custom Exception
+
+* A custom exception (also called a user-defined exception) in Java is a specific exception class created by a programmer to handle error scenarios based on  their application.
+
+* cutom Exception we can create both for checked and unchecked.
+
+**how to create Checked Custom Excepton**
+
+* we have to create one class and that class should inherit from *Exception Class*
+
+*syntax*
+
+```java
+     class classname extends Exception
+     {
+          classname(String msg)
+          {
+            super(msg);
+          }
+     }
+```
+
+
+*example*
+
+```java
+
+
+
+// !  Checked Custom Exception 
+
+class NotStudying extends Exception
+{
+      NotStudying(String msg)
+      {
+        super(msg);
+      }
+}
+
+public class Custom1{
+
+    public static void school() throws NotStudying
+    {
+        int marks = 30 ;
+
+        if(marks >= 50)
+            System.out.println("very good.. keep it up");
+        else 
+            throw new NotStudying("very bad");
+    }
+    public static void main(String[] args) {
+        
+        try{
+
+            school();
+        }
+        catch(NotStudying n)
+        {
+           System.out.println(n);
+           System.out.println(n.getMessage());
+           System.out.println("NotStuding Exception is handled");
+        }
+    }
+}
+```
+
+
+
+**unchecked Custom Exception**
+
+* first we have to create our own class , this class should inherit *RuntimeException* class.
+
+*syntax*
+
+```java
+     class classname extends RuntimeException
+     {
+          classname(String msg)
+          {
+            super(msg);
+          }
+     }
+```
+
+*example*
+
+```java
+
+
+// ! unchecked custom exception 
+
+class BreakNotWorking extends RuntimeException
+{
+    BreakNotWorking(String msg)
+    {
+        super(msg);
+    }
+}
+
+class Bike
+{
+    static boolean isStoppable = false;
+
+    public static void ride() 
+    {
+            System.out.println("bike is running");
+
+            if(isStoppable)
+                System.out.println("bike is stopped");
+            else 
+                throw new BreakNotWorking("you can't stop the bike");
+    }           
+}
+public class Custom2 {
+    public static void main(String[] args) {   
+        Bike.ride();
+    }
+}
+
+```
+
+
+**difference between final , finally and finalize**
+
+*final*
+  
+  * it is one keyword, modifier
+  * we can apply it to variable,class,methods.
+  * it is used to make constant.
+  * final variable we can't change the value, 
+    final class we can't inherit
+    final method we can't override.
+
+*finally*
+ 
+ * finally is one block.
+ * it is written with try or try and catch block.
+ * it will execute everytime irrespective of exception is handled or not handled.
+
+*finalize*
+  
+  * finalize is one method. 
+  * it is present in Object class.
+  * it is used for cleanup (to remove the object from the heap area who does not have any reference.)
+  * it is called by *System.gc()* method.
+
+
+### Wrapper Class
