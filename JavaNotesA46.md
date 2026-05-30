@@ -4900,3 +4900,105 @@ public class Custom2 {
 
 
 ### Wrapper Class
+
+* Java is not fully object oriented language,because here we are using primitive datatypes.
+
+* A wrapper class in Java is a class that wraps a primitive data type inside an object.
+
+* for each 8 primitive datatypes java has corresponding 8 wrapper class.
+
+* all the wrapper classes are present in `java.lang` package.
+
+*primitive datatype       wrapper class*
+
+byte                          Byte
+short                         Short
+int                           Integer
+long                          Long
+float                         Float
+double                        Double
+char                          Character
+boolean                       Boolean
+
+
+**what is Boxing**
+
+* `Boxing` in Java is the process of converting a primitive data type into its corresponding object wrapper class.
+
+*syntax*
+
+ ```java
+
+ wrapperclass ref = wrapperclass.valueOf(primitive data)
+
+ ```
+
+ *example*
+
+ ```java
+     
+     class Wrapper1
+     {
+        public static void main()
+        {
+            int a = 10 ; 
+            Integer ob1 = Integer.valueOf(a);
+
+            System.out.println(a);
+            System.out.println(ob1);
+            System.out.println(ob1.toString());
+         //   System.out.println(a.toString()); ❌
+        }
+     }
+
+ ```
+
+
+ **Unboxing**
+
+ * it is the process of converting wrapper class back to its corresponding primitive type.
+
+ *example*
+
+ ```java
+     
+     class Wrapper2
+     {
+        public static void main(String args[])
+        {
+             int a = 10 ; 
+             Integer ob1 = Integer.valueOf(a); // boxing
+
+             int b = ob1.intValue(); // unboxing
+        }
+     }
+ ```
+
+ **auto boxing and auto unboxing**
+
+ * *Autoboxing* in Java is the automatic conversion that the Java compiler makes between primitive data types (like int, double, char) and their corresponding object wrapper classes (like Integer, Double, Character).
+
+ * for performing *auto boxing* no need to use *valueOf()* method
+
+
+ * *Auto Unboxing* is the process of automatically converting Wrapper class object into primitive datatypes.
+
+
+ *example*
+
+ ```java
+    
+    class AutoConverting
+    {
+        public static void main(String args[])
+        {
+             int a = 10 ; 
+             Integer ob1 = a ; // autoBoxing
+
+             int b = ob1 ; // autoUnboxing
+
+             System.out.println(ob1);
+             System.out.println(b);
+        }
+    }
+ ```
